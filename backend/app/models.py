@@ -3,11 +3,11 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Optional
 
-from sqlmodel import Field, Relationship, SQLModel
+from sqlmodel import Field, SQLModel
 
 
 class AdminUser(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     username: str = Field(index=True)
     hashed_password: str
     full_name: str
@@ -15,7 +15,7 @@ class AdminUser(SQLModel, table=True):
 
 
 class CompanyProfile(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     company_name: str
     tagline: str
     hero_title: str
@@ -35,7 +35,7 @@ class CompanyProfile(SQLModel, table=True):
 
 
 class Commitment(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     title: str
     subtitle: str
     description: str
@@ -44,7 +44,7 @@ class Commitment(SQLModel, table=True):
 
 
 class Service(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     name: str
     slug: str = Field(index=True)
     short_description: str
@@ -54,23 +54,22 @@ class Service(SQLModel, table=True):
 
 
 class Sector(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     name: str
     slug: str = Field(index=True)
     short_description: str
     hero_stat: str
     image: str
     display_order: int = 0
-    projects: list["Project"] = Relationship(back_populates="sector")
 
 
 class Project(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     title: str
     slug: str = Field(index=True)
     client_name: str
     location: str
-    sector_id: int | None = Field(default=None, foreign_key="sector.id")
+    sector_id: Optional[int] = Field(default=None, foreign_key="sector.id")
     service_line: str
     size: str
     year_completed: int
@@ -82,11 +81,10 @@ class Project(SQLModel, table=True):
     impact: str
     image: str
     featured: bool = False
-    sector: Optional[Sector] = Relationship(back_populates="projects")
 
 
 class Insight(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     title: str
     slug: str = Field(index=True)
     category: str
@@ -98,7 +96,7 @@ class Insight(SQLModel, table=True):
 
 
 class Office(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     name: str
     city: str
     country: str
@@ -111,7 +109,7 @@ class Office(SQLModel, table=True):
 
 
 class Inquiry(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     full_name: str
     company_name: str
     email: str

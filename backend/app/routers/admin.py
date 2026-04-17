@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Optional
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session, func, select
 
@@ -63,7 +65,7 @@ def get_or_404(session: Session, model, item_id: int, detail: str):
     return item
 
 
-def ensure_sector_exists(session: Session, sector_id: int | None) -> None:
+def ensure_sector_exists(session: Session, sector_id: Optional[int]) -> None:
     if sector_id is None:
         return
     if not session.get(Sector, sector_id):

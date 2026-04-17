@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+from typing import Optional
 
 from sqlmodel import SQLModel
 
@@ -35,22 +36,22 @@ class CompanyProfileBase(SQLModel):
 
 
 class CompanyProfileUpdate(SQLModel):
-    company_name: str | None = None
-    tagline: str | None = None
-    hero_title: str | None = None
-    hero_subtitle: str | None = None
-    overview: str | None = None
-    vision: str | None = None
-    years_experience: int | None = None
-    completed_projects: int | None = None
-    annual_volume: str | None = None
-    client_retention: str | None = None
-    phone: str | None = None
-    email: str | None = None
-    address: str | None = None
-    headquarters: str | None = None
-    hero_primary_cta: str | None = None
-    hero_secondary_cta: str | None = None
+    company_name: Optional[str] = None
+    tagline: Optional[str] = None
+    hero_title: Optional[str] = None
+    hero_subtitle: Optional[str] = None
+    overview: Optional[str] = None
+    vision: Optional[str] = None
+    years_experience: Optional[int] = None
+    completed_projects: Optional[int] = None
+    annual_volume: Optional[str] = None
+    client_retention: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[str] = None
+    address: Optional[str] = None
+    headquarters: Optional[str] = None
+    hero_primary_cta: Optional[str] = None
+    hero_secondary_cta: Optional[str] = None
 
 
 class CommitmentBase(SQLModel):
@@ -66,11 +67,11 @@ class CommitmentCreate(CommitmentBase):
 
 
 class CommitmentUpdate(SQLModel):
-    title: str | None = None
-    subtitle: str | None = None
-    description: str | None = None
-    accent: str | None = None
-    display_order: int | None = None
+    title: Optional[str] = None
+    subtitle: Optional[str] = None
+    description: Optional[str] = None
+    accent: Optional[str] = None
+    display_order: Optional[int] = None
 
 
 class ServiceBase(SQLModel):
@@ -87,12 +88,12 @@ class ServiceCreate(ServiceBase):
 
 
 class ServiceUpdate(SQLModel):
-    name: str | None = None
-    slug: str | None = None
-    short_description: str | None = None
-    detailed_description: str | None = None
-    icon: str | None = None
-    display_order: int | None = None
+    name: Optional[str] = None
+    slug: Optional[str] = None
+    short_description: Optional[str] = None
+    detailed_description: Optional[str] = None
+    icon: Optional[str] = None
+    display_order: Optional[int] = None
 
 
 class SectorBase(SQLModel):
@@ -109,12 +110,12 @@ class SectorCreate(SectorBase):
 
 
 class SectorUpdate(SQLModel):
-    name: str | None = None
-    slug: str | None = None
-    short_description: str | None = None
-    hero_stat: str | None = None
-    image: str | None = None
-    display_order: int | None = None
+    name: Optional[str] = None
+    slug: Optional[str] = None
+    short_description: Optional[str] = None
+    hero_stat: Optional[str] = None
+    image: Optional[str] = None
+    display_order: Optional[int] = None
 
 
 class ProjectBase(SQLModel):
@@ -122,7 +123,7 @@ class ProjectBase(SQLModel):
     slug: str
     client_name: str
     location: str
-    sector_id: int | None = None
+    sector_id: Optional[int] = None
     service_line: str
     size: str
     year_completed: int
@@ -141,22 +142,22 @@ class ProjectCreate(ProjectBase):
 
 
 class ProjectUpdate(SQLModel):
-    title: str | None = None
-    slug: str | None = None
-    client_name: str | None = None
-    location: str | None = None
-    sector_id: int | None = None
-    service_line: str | None = None
-    size: str | None = None
-    year_completed: int | None = None
-    status: str | None = None
-    headline: str | None = None
-    description: str | None = None
-    challenge: str | None = None
-    solution: str | None = None
-    impact: str | None = None
-    image: str | None = None
-    featured: bool | None = None
+    title: Optional[str] = None
+    slug: Optional[str] = None
+    client_name: Optional[str] = None
+    location: Optional[str] = None
+    sector_id: Optional[int] = None
+    service_line: Optional[str] = None
+    size: Optional[str] = None
+    year_completed: Optional[int] = None
+    status: Optional[str] = None
+    headline: Optional[str] = None
+    description: Optional[str] = None
+    challenge: Optional[str] = None
+    solution: Optional[str] = None
+    impact: Optional[str] = None
+    image: Optional[str] = None
+    featured: Optional[bool] = None
 
 
 class InsightBase(SQLModel):
@@ -175,14 +176,14 @@ class InsightCreate(InsightBase):
 
 
 class InsightUpdate(SQLModel):
-    title: str | None = None
-    slug: str | None = None
-    category: str | None = None
-    excerpt: str | None = None
-    content: str | None = None
-    image: str | None = None
-    published_at: datetime | None = None
-    featured: bool | None = None
+    title: Optional[str] = None
+    slug: Optional[str] = None
+    category: Optional[str] = None
+    excerpt: Optional[str] = None
+    content: Optional[str] = None
+    image: Optional[str] = None
+    published_at: Optional[datetime] = None
+    featured: Optional[bool] = None
 
 
 class OfficeBase(SQLModel):
@@ -202,15 +203,15 @@ class OfficeCreate(OfficeBase):
 
 
 class OfficeUpdate(SQLModel):
-    name: str | None = None
-    city: str | None = None
-    country: str | None = None
-    address: str | None = None
-    phone: str | None = None
-    email: str | None = None
-    manager: str | None = None
-    region: str | None = None
-    featured: bool | None = None
+    name: Optional[str] = None
+    city: Optional[str] = None
+    country: Optional[str] = None
+    address: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[str] = None
+    manager: Optional[str] = None
+    region: Optional[str] = None
+    featured: Optional[bool] = None
 
 
 class InquiryCreate(SQLModel):
@@ -223,7 +224,7 @@ class InquiryCreate(SQLModel):
 
 
 class InquiryUpdate(SQLModel):
-    status: str | None = None
+    status: Optional[str] = None
 
 
 class DashboardStats(SQLModel):

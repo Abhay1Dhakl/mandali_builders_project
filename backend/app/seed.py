@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 from sqlmodel import Session, select
 
@@ -20,7 +20,7 @@ from app.models import (
 )
 
 
-def load_demo_data(path: Path | None = None) -> dict[str, Any]:
+def load_demo_data(path: Optional[Path] = None) -> dict[str, Any]:
     source = path or settings.shared_data_path
     with source.open("r", encoding="utf-8") as file:
         return json.load(file)

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Optional
+
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlmodel import Session, desc, select
 
@@ -99,8 +101,8 @@ def list_sectors(session: Session = Depends(get_session)) -> list[dict]:
 
 @router.get("/projects")
 def list_projects(
-    sector: str | None = Query(default=None),
-    featured: bool | None = Query(default=None),
+    sector: Optional[str] = Query(default=None),
+    featured: Optional[bool] = Query(default=None),
     session: Session = Depends(get_session),
 ) -> list[dict]:
     projects = session.exec(select(Project).order_by(desc(Project.year_completed), Project.title)).all()
