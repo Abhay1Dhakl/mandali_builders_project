@@ -81,7 +81,7 @@ const defaultProfile: CompanyProfile = {
   hero_secondary_cta: ""
 };
 
-function getEmptyDrafts(): Record<Exclude<TabKey, "profile" | "inquiries">, DraftRecord> {
+function getEmptyDrafts(defaultSectorId = 0): Record<Exclude<TabKey, "profile" | "inquiries">, DraftRecord> {
   return {
     commitments: {
       title: "",
@@ -111,7 +111,7 @@ function getEmptyDrafts(): Record<Exclude<TabKey, "profile" | "inquiries">, Draf
       slug: "",
       client_name: "",
       location: "",
-      sector_id: 1,
+      sector_id: defaultSectorId,
       service_line: "",
       size: "",
       year_completed: new Date().getFullYear(),
@@ -278,7 +278,9 @@ export function AdminDashboard() {
       ] = await Promise.all(responses.map(async (response) => response.json()));
 
       setDashboard(dashboardData as DashboardStats);
-      setProfile(profileData as CompanyProfile);
+      const { id: _id, ...profileWithoutId } = profileData as CompanyProfile & { id?: number };
+
+      setProfile(profileWithoutId);
       setResources({
         commitments: commitmentsData as Commitment[],
         services: servicesData as Service[],
@@ -288,7 +290,7 @@ export function AdminDashboard() {
         offices: officesData as Office[],
         inquiries: inquiriesData as Inquiry[]
       });
-      setDrafts(getEmptyDrafts());
+      setDrafts(getEmptyDrafts((sectorsData as Sector[])[0]?.id ?? 0));
     } catch {
       setError("Admin data could not be loaded. Start the backend to use the control panel.");
     } finally {
@@ -313,7 +315,7 @@ export function AdminDashboard() {
   function resetDraft(tab: Exclude<TabKey, "profile" | "inquiries">) {
     setDrafts((current) => ({
       ...current,
-      [tab]: getEmptyDrafts()[tab]
+      [tab]: getEmptyDrafts(resources.sectors[0]?.id ?? 0)[tab]
     }));
     setEditingIds((current) => ({ ...current, [tab]: null }));
   }
