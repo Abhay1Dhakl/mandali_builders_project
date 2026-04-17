@@ -1,0 +1,319 @@
+{
+  "profile": {
+    "company_name": "Mandali Builders",
+    "tagline": "Building the next generation of civic, commercial, and industrial landmarks.",
+    "hero_title": "Complex construction delivered with confidence, control, and craft.",
+    "hero_subtitle": "Mandali Builders is a multidisciplinary construction company delivering high-value projects across Nepal and South Asia with a focus on schedule certainty, engineering rigor, and long-term client partnerships.",
+    "overview": "Mandali Builders works across the full project lifecycle, from preconstruction strategy and value engineering through execution, commissioning, and operational handover. Our teams combine local market intelligence with disciplined project controls to deliver technically challenging projects for private developers, institutions, hospitality groups, and public-sector clients.",
+    "vision": "To be the region's most trusted construction partner for projects that shape economies, strengthen communities, and endure over time.",
+    "years_experience": 18,
+    "completed_projects": 126,
+    "annual_volume": "NPR 14B",
+    "client_retention": "87%",
+    "phone": "+977-1-5543210",
+    "email": "hello@mandalibuilders.com",
+    "address": "Naxal, Kathmandu 44600, Nepal",
+    "headquarters": "Kathmandu, Nepal",
+    "hero_primary_cta": "Discuss a Project",
+    "hero_secondary_cta": "See Our Work"
+  },
+  "commitments": [
+    {
+      "title": "Safety and Assurance",
+      "subtitle": "Injury-free jobsites through disciplined planning and accountability.",
+      "description": "Every Mandali Builders project is guided by pre-task planning, hazard prevention, quality checkpoints, and transparent reporting that give owners confidence from mobilization to handover.",
+      "accent": "amber",
+      "display_order": 1
+    },
+    {
+      "title": "Sustainable Delivery",
+      "subtitle": "Lower-impact construction that supports resilient growth.",
+      "description": "We integrate material optimization, energy-conscious systems, local procurement, and lifecycle thinking to reduce waste and improve building performance.",
+      "accent": "green",
+      "display_order": 2
+    },
+    {
+      "title": "Digital Project Controls",
+      "subtitle": "Live visibility on schedule, cost, procurement, and risk.",
+      "description": "Our teams use coordinated digital workflows, progress dashboards, and structured decision logs to keep clients informed and projects moving with fewer surprises.",
+      "accent": "blue",
+      "display_order": 3
+    },
+    {
+      "title": "Community Impact",
+      "subtitle": "Projects that create jobs, improve access, and elevate cities.",
+      "description": "We invest in local subcontractor partnerships, workforce development, and community-sensitive delivery strategies that strengthen the places where we build.",
+      "accent": "terracotta",
+      "display_order": 4
+    }
+  ],
+  "services": [
+    {
+      "name": "Preconstruction",
+      "slug": "preconstruction",
+      "short_description": "Feasibility, budgeting, constructability reviews, and procurement planning that de-risk delivery before ground breaks.",
+      "detailed_description": "Our preconstruction teams align scope, schedule, logistics, and cost from day one. We lead design coordination, package strategy, value engineering, and milestone planning to ensure owners make informed investment decisions early.",
+      "icon": "Compass",
+      "display_order": 1
+    },
+    {
+      "name": "Construction Management",
+      "slug": "construction-management",
+      "short_description": "End-to-end leadership for complex builds requiring rigorous coordination and control.",
+      "detailed_description": "Mandali Builders manages consultants, trade partners, procurement, quality, and safety with disciplined reporting structures that keep clients informed while accelerating issue resolution.",
+      "icon": "Building2",
+      "display_order": 2
+    },
+    {
+      "name": "Design-Build",
+      "slug": "design-build",
+      "short_description": "Integrated design and execution teams that compress timelines and simplify accountability.",
+      "detailed_description": "For projects that need speed and single-point responsibility, our design-build teams coordinate architecture, engineering, approvals, and construction under one delivery structure.",
+      "icon": "Layers3",
+      "display_order": 3
+    },
+    {
+      "name": "General Contracting",
+      "slug": "general-contracting",
+      "short_description": "Reliable field execution backed by strong trade management and quality assurance.",
+      "detailed_description": "We mobilize experienced site teams, maintain strict commercial discipline, and sequence work packages with a focus on craftsmanship, productivity, and schedule certainty.",
+      "icon": "HardHat",
+      "display_order": 4
+    },
+    {
+      "name": "Interiors and Fit-Out",
+      "slug": "interiors-fit-out",
+      "short_description": "High-finish interior environments for workplaces, hospitality assets, and public-facing spaces.",
+      "detailed_description": "Our fit-out teams coordinate building services, specialty suppliers, and detailed finishing packages for premium, fast-track interior environments.",
+      "icon": "Sparkles",
+      "display_order": 5
+    }
+  ],
+  "sectors": [
+    {
+      "name": "Commercial",
+      "slug": "commercial",
+      "short_description": "Office campuses, mixed-use towers, retail destinations, and headquarters developments.",
+      "hero_stat": "4.2M sq ft delivered",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80",
+      "display_order": 1
+    },
+    {
+      "name": "Hospitality",
+      "slug": "hospitality",
+      "short_description": "Hotels, resorts, and branded lifestyle assets built around guest experience and operational readiness.",
+      "hero_stat": "1,150 keys completed",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80",
+      "display_order": 2
+    },
+    {
+      "name": "Healthcare",
+      "slug": "healthcare",
+      "short_description": "Clinics, hospitals, and specialty care environments with demanding MEP and operational requirements.",
+      "hero_stat": "680 beds delivered",
+      "image": "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=1400&q=80",
+      "display_order": 3
+    },
+    {
+      "name": "Education",
+      "slug": "education",
+      "short_description": "Academic campuses, research centers, and student life facilities designed for long-term resilience.",
+      "hero_stat": "32 learning facilities",
+      "image": "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1400&q=80",
+      "display_order": 4
+    },
+    {
+      "name": "Infrastructure",
+      "slug": "infrastructure",
+      "short_description": "Transport, utilities, and civic assets that improve mobility and urban performance.",
+      "hero_stat": "11 strategic programs",
+      "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80",
+      "display_order": 5
+    },
+    {
+      "name": "Industrial",
+      "slug": "industrial",
+      "short_description": "Manufacturing, logistics, and high-throughput facilities optimized for operational efficiency.",
+      "hero_stat": "2.8M sq ft operational space",
+      "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1400&q=80",
+      "display_order": 6
+    }
+  ],
+  "projects": [
+    {
+      "title": "Himalaya Financial Centre",
+      "slug": "himalaya-financial-centre",
+      "client_name": "Himalaya Capital Group",
+      "location": "Kathmandu, Nepal",
+      "sector_slug": "commercial",
+      "service_line": "Construction Management",
+      "size": "410,000 sq ft",
+      "year_completed": 2025,
+      "status": "Completed",
+      "headline": "A premium mixed-use business address delivered in the heart of Kathmandu.",
+      "description": "The Himalaya Financial Centre brought together a high-rise office tower, retail podium, and public plaza on a constrained urban site. Mandali Builders coordinated deep excavation, structural acceleration, and phased fit-out handovers for anchor tenants.",
+      "challenge": "The project required uninterrupted access for neighboring businesses, complex underground works, and premium-grade interior finishes under a compressed leasing schedule.",
+      "solution": "We sequenced work through zone-based turnover planning, digital coordination for MEP congestion, and a just-in-time procurement strategy for imported facade and interior systems.",
+      "impact": "The development opened on time with 92% pre-leased occupancy and established a new benchmark for premium commercial delivery in central Kathmandu.",
+      "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
+      "featured": true
+    },
+    {
+      "title": "Pokhara Lakeview Resort",
+      "slug": "pokhara-lakeview-resort",
+      "client_name": "Summit Hospitality",
+      "location": "Pokhara, Nepal",
+      "sector_slug": "hospitality",
+      "service_line": "Design-Build",
+      "size": "186 keys",
+      "year_completed": 2024,
+      "status": "Completed",
+      "headline": "A luxury resort designed for rapid delivery without compromising guest experience.",
+      "description": "Set above Phewa Lake, the Pokhara Lakeview Resort includes guest villas, a conference center, wellness facilities, and landscape-rich public spaces. Mandali Builders delivered the project through a single integrated design-build team.",
+      "challenge": "Remote procurement, monsoon exposure, and a premium operator standard created schedule and quality pressures across the site.",
+      "solution": "Our teams front-loaded material decisions, prefabricated repeatable room modules, and aligned commissioning with brand-operator readiness milestones.",
+      "impact": "The resort launched ahead of peak tourist season and has become a flagship hospitality destination for domestic and regional travelers.",
+      "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80",
+      "featured": true
+    },
+    {
+      "title": "Madhesh Regional Medical Institute",
+      "slug": "madhesh-regional-medical-institute",
+      "client_name": "Madhesh Health Authority",
+      "location": "Janakpur, Nepal",
+      "sector_slug": "healthcare",
+      "service_line": "General Contracting",
+      "size": "220 beds",
+      "year_completed": 2026,
+      "status": "In Progress",
+      "headline": "A next-generation medical campus expanding specialized care access in the region.",
+      "description": "This healthcare campus includes inpatient towers, outpatient clinics, emergency services, diagnostics, and supporting utilities infrastructure. Mandali Builders is leading a multi-package delivery program with stringent infection-control and commissioning protocols.",
+      "challenge": "The complexity of clinical systems integration, phased authority approvals, and ongoing site operations required tight coordination between multiple stakeholders.",
+      "solution": "We established a live commissioning tracker, embedded quality hold points, and coordinated specialty trades through detailed BIM-led clash detection and package sequencing.",
+      "impact": "Once complete, the facility will significantly increase regional access to higher-acuity healthcare and reduce patient travel to Kathmandu for specialized treatment.",
+      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80",
+      "featured": true
+    },
+    {
+      "title": "Everest International School Campus",
+      "slug": "everest-international-school-campus",
+      "client_name": "Everest Education Trust",
+      "location": "Bhaktapur, Nepal",
+      "sector_slug": "education",
+      "service_line": "Preconstruction",
+      "size": "315,000 sq ft",
+      "year_completed": 2023,
+      "status": "Completed",
+      "headline": "A future-ready academic campus with laboratories, sports facilities, and flexible learning environments.",
+      "description": "Mandali Builders supported the client from feasibility through phased delivery of academic buildings, student commons, laboratories, and athletics infrastructure for a growing K-12 and higher-secondary institution.",
+      "challenge": "The client needed phased occupancy while construction continued, without disrupting academic operations or compromising safety.",
+      "solution": "We planned deliveries around academic calendars, isolated active worksites, and packaged critical-path structures for early occupancy approvals.",
+      "impact": "The completed campus enabled a 40% enrollment increase and positioned the institution for future program expansion.",
+      "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1400&q=80",
+      "featured": false
+    },
+    {
+      "title": "Biratnagar Logistics Gateway",
+      "slug": "biratnagar-logistics-gateway",
+      "client_name": "Eastern Trade Systems",
+      "location": "Biratnagar, Nepal",
+      "sector_slug": "industrial",
+      "service_line": "Construction Management",
+      "size": "690,000 sq ft",
+      "year_completed": 2025,
+      "status": "Completed",
+      "headline": "A high-throughput logistics and light-manufacturing hub built for regional supply chains.",
+      "description": "The Biratnagar Logistics Gateway combines warehousing, cold-chain capacity, truck circulation yards, and flexible industrial bays on a fast-track program.",
+      "challenge": "Ground improvement, utility reliability, and the need to operationalize tenants quickly created pressure on both civil works and fit-out sequencing.",
+      "solution": "Mandali Builders used a phased turnover strategy and tightly integrated civil, structural, and MEP planning to deliver operational zones early.",
+      "impact": "The facility has strengthened east-west distribution capacity and reduced logistics bottlenecks for multiple tenants.",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80",
+      "featured": true
+    },
+    {
+      "title": "Bagmati Mobility Corridor Package II",
+      "slug": "bagmati-mobility-corridor-package-ii",
+      "client_name": "Kathmandu Valley Transport Authority",
+      "location": "Kathmandu Valley, Nepal",
+      "sector_slug": "infrastructure",
+      "service_line": "General Contracting",
+      "size": "12.4 km",
+      "year_completed": 2026,
+      "status": "In Progress",
+      "headline": "A strategic mobility package improving multimodal access across dense urban districts.",
+      "description": "Package II of the Bagmati Mobility Corridor includes bridges, stations, road widening, utilities relocation, and public-realm improvements across one of the valley's most congested transport corridors.",
+      "challenge": "Maintaining public movement, managing stakeholders, and sequencing utility diversions demanded exceptional field coordination and communications.",
+      "solution": "We implemented live traffic-management plans, multi-agency weekly control rooms, and milestone-based public information campaigns to reduce disruption.",
+      "impact": "The corridor is expected to reduce travel time, improve pedestrian safety, and unlock adjacent urban redevelopment once complete.",
+      "image": "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1400&q=80",
+      "featured": false
+    }
+  ],
+  "insights": [
+    {
+      "title": "How Early Trade Partner Engagement Protects Cost and Schedule",
+      "slug": "early-trade-partner-engagement",
+      "category": "Preconstruction",
+      "excerpt": "Why bringing key trade partners into planning earlier reduces redesign, procurement risk, and downstream delay.",
+      "content": "Mandali Builders has seen the strongest project outcomes when critical trade partners are aligned during preconstruction rather than after documentation is fixed. Early involvement improves constructability, clarifies long-lead procurement, and helps project teams quantify cost and schedule implications before risk compounds. On complex projects, the most valuable savings often come from sequence optimization and scope clarity rather than blunt cost cutting.",
+      "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80",
+      "published_at": "2026-03-28T09:00:00Z",
+      "featured": true
+    },
+    {
+      "title": "Delivering Hospitality Projects Before Peak Season",
+      "slug": "delivering-hospitality-projects-before-peak-season",
+      "category": "Hospitality",
+      "excerpt": "A look at how phased commissioning and operator-ready handovers improve launch readiness for hotels and resorts.",
+      "content": "Hospitality developments live or die by opening readiness. Construction teams must think beyond substantial completion and plan around staff training, mock-up validation, back-of-house operations, and guest experience from day one. Mandali Builders uses operator-aligned milestone maps to sequence guestrooms, public areas, kitchens, and amenities so owners can open with confidence and begin revenue capture earlier.",
+      "image": "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1400&q=80",
+      "published_at": "2026-02-12T09:00:00Z",
+      "featured": true
+    },
+    {
+      "title": "Digital Controls That Keep Complex Jobs Moving",
+      "slug": "digital-controls-for-complex-jobs",
+      "category": "Innovation",
+      "excerpt": "The dashboards, issue logs, and reporting standards that help owners make faster decisions on live projects.",
+      "content": "A disciplined digital controls environment creates accountability across procurement, field execution, quality, and commissioning. At Mandali Builders, we standardize issue management, decision logs, and progress reporting so project teams can escalate risk early and owners can act on reliable information. Better visibility does not replace leadership, but it gives leadership the clarity needed to move decisively.",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
+      "published_at": "2026-01-20T09:00:00Z",
+      "featured": true
+    }
+  ],
+  "offices": [
+    {
+      "name": "Kathmandu Headquarters",
+      "city": "Kathmandu",
+      "country": "Nepal",
+      "address": "Naxal, Kathmandu 44600, Nepal",
+      "phone": "+977-1-5543210",
+      "email": "hello@mandalibuilders.com",
+      "manager": "Aarav Shrestha",
+      "region": "Central Nepal",
+      "featured": true
+    },
+    {
+      "name": "Pokhara Regional Office",
+      "city": "Pokhara",
+      "country": "Nepal",
+      "address": "Lakeside-6, Pokhara 33700, Nepal",
+      "phone": "+977-61-457210",
+      "email": "pokhara@mandalibuilders.com",
+      "manager": "Nima Gurung",
+      "region": "Western Nepal",
+      "featured": true
+    },
+    {
+      "name": "Biratnagar Regional Office",
+      "city": "Biratnagar",
+      "country": "Nepal",
+      "address": "Main Road, Biratnagar 56613, Nepal",
+      "phone": "+977-21-531420",
+      "email": "biratnagar@mandalibuilders.com",
+      "manager": "Pratik Koirala",
+      "region": "Eastern Nepal",
+      "featured": false
+    }
+  ]
+}
