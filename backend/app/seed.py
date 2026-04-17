@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Optional
 
@@ -53,7 +54,11 @@ def seed_database(session: Session) -> None:
         session.add(Project(**payload))
 
     for item in data["insights"]:
-        session.add(Insight(**item))
+        payload = {
+            **item,
+            "published_at": datetime.fromisoformat(item["published_at"].replace("Z", "+00:00")),
+        }
+        session.add(Insight(**payload))
 
     for item in data["offices"]:
         session.add(Office(**item))

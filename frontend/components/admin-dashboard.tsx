@@ -22,6 +22,9 @@ type InputType = "text" | "textarea" | "number" | "checkbox" | "select" | "datet
 
 type DraftValue = string | number | boolean;
 type DraftRecord = Record<string, DraftValue>;
+type ProfileValue = CompanyProfile[keyof CompanyProfile];
+type EditableTab = Exclude<TabKey, "profile" | "inquiries">;
+type EditableResource = Commitment | Service | Sector | Project | Insight | Office;
 
 interface FieldConfig {
   name: string;
@@ -81,7 +84,7 @@ const defaultProfile: CompanyProfile = {
   hero_secondary_cta: ""
 };
 
-function getEmptyDrafts(defaultSectorId = 0): Record<Exclude<TabKey, "profile" | "inquiries">, DraftRecord> {
+function getEmptyDrafts(defaultSectorId = 0): Record<EditableTab, DraftRecord> {
   return {
     commitments: {
       title: "",
@@ -150,6 +153,29 @@ function getEmptyDrafts(defaultSectorId = 0): Record<Exclude<TabKey, "profile" |
 
 function toInputDateTime(value: string) {
   return value ? value.slice(0, 16) : "";
+}
+
+function getResourceTitle(item: EditableResource) {
+  return "title" in item ? item.title : item.name;
+}
+
+function getResourceSubtitle(item: EditableResource) {
+  if ("subtitle" in item) {
+    return item.subtitle;
+  }
+  if ("category" in item) {
+    return item.category;
+  }
+  if ("region" in item) {
+    return item.region;
+  }
+  if ("location" in item) {
+    return item.location;
+  }
+  if ("slug" in item) {
+    return item.slug;
+  }
+  return "";
 }
 
 export function AdminDashboard() {
@@ -298,11 +324,11 @@ export function AdminDashboard() {
     }
   }
 
-  function updateProfileField(name: keyof CompanyProfile, value: DraftValue) {
+  function updateProfileField(name: keyof CompanyProfile, value: ProfileValue) {
     setProfile((current) => ({ ...current, [name]: value }));
   }
 
-  function updateDraft(tab: Exclude<TabKey, "profile" | "inquiries">, name: string, value: DraftValue) {
+  function updateDraft(tab: EditableTab, name: string, value: DraftValue) {
     setDrafts((current) => ({
       ...current,
       [tab]: {
@@ -312,7 +338,7 @@ export function AdminDashboard() {
     }));
   }
 
-  function resetDraft(tab: Exclude<TabKey, "profile" | "inquiries">) {
+  function resetDraft(tab: EditableTab) {
     setDrafts((current) => ({
       ...current,
       [tab]: getEmptyDrafts(resources.sectors[0]?.id ?? 0)[tab]
@@ -320,17 +346,18 @@ export function AdminDashboard() {
     setEditingIds((current) => ({ ...current, [tab]: null }));
   }
 
-  function startEdit(tab: Exclude<TabKey, "profile" | "inquiries">, item: Record<string, unknown>) {
+  function startEdit(tab: EditableTab, item: EditableResource) {
     const nextDraft: DraftRecord = {};
     Object.entries(item).forEach(([key, value]) => {
       if (key === "id" || key === "sector") {
         return;
       }
       if (typeof value === "boolean" || typeof value === "number" || typeof value === "string") {
-        nextDraft[key] = key === "published_at" ? toInputDateTime(value) : value;
+        nextDraft[key] =
+          key === "published_at" && typeof value === "string" ? toInputDateTime(value) : value;
       }
     });
-    setEditingIds((current) => ({ ...current, [tab]: Number(item.id) }));
+    setEditingIds((current) => ({ ...current, [tab]: item.id }));
     setDrafts((current) => ({ ...current, [tab]: nextDraft }));
     setActiveTab(tab);
   }
@@ -354,7 +381,7 @@ export function AdminDashboard() {
     }
   }
 
-  function normalizePayload(tab: Exclude<TabKey, "profile" | "inquiries">, draft: DraftRecord) {
+  function normalizePayload(tab: EditableTab, draft: DraftRecord) {
     const payload: Record<string, DraftValue | null> = {};
 
     Object.entries(draft).forEach(([key, value]) => {
@@ -372,7 +399,7 @@ export function AdminDashboard() {
     return payload;
   }
 
-  async function saveResource(tab: Exclude<TabKey, "profile" | "inquiries">) {
+  async function saveResource(tab: EditableTab) {
     setWorking(true);
     setMessage("");
     setError("");
@@ -437,7 +464,7 @@ export function AdminDashboard() {
     router.replace("/admin/login");
   }
 
-  const fieldConfigs: Record<Exclude<TabKey, "profile" | "inquiries">, FieldConfig[]> = {
+  const fieldConfigs: Record<EditableTab, FieldConfig[]> = {
     commitments: [
       { name: "title", label: "Title", type: "text" },
       { name: "subtitle", label: "Subtitle", type: "text" },
@@ -527,7 +554,7 @@ export function AdminDashboard() {
   };
 
   function renderInput(
-    tab: Exclude<TabKey, "profile" | "inquiries">,
+    tab: EditableTab,
     field: FieldConfig,
     value: DraftValue | undefined
   ) {
@@ -559,9 +586,7 @@ export function AdminDashboard() {
             updateDraft(
               tab,
               field.name,
-              field.name === "sector_id" || field.type === "number"
-                ? Number(event.target.value)
-                : event.target.value
+              field.name === "sector_id" ? Number(event.target.value) : event.target.value
             )
           }
         >
@@ -716,20 +741,11 @@ export function AdminDashboard() {
           <div className="admin-panel">
             <h2>Existing records</h2>
             <div className="data-table">
-              {(resources[activeTab] as Array<Record<string, unknown>>).map((item) => (
-                <div key={String(item.id)} className="data-row">
+              {resources[activeTab].map((item) => (
+                <div key={item.id} className="data-row">
                   <div>
-                    <strong>{String(item.title ?? item.name ?? item.city)}</strong>
-                    <p>
-                      {String(
-                        item.slug ??
-                          item.subtitle ??
-                          item.category ??
-                          item.region ??
-                          item.location ??
-                          ""
-                      )}
-                    </p>
+                    <strong>{getResourceTitle(item)}</strong>
+                    <p>{getResourceSubtitle(item)}</p>
                   </div>
                   <div className="row-actions">
                     <button className="button-link" onClick={() => startEdit(activeTab, item)}>
@@ -737,7 +753,7 @@ export function AdminDashboard() {
                     </button>
                     <button
                       className="button-link danger"
-                      onClick={() => deleteResource(activeTab, Number(item.id))}
+                      onClick={() => deleteResource(activeTab, item.id)}
                     >
                       Delete
                     </button>

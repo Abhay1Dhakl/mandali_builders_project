@@ -106,7 +106,14 @@ docker compose up --build
 
 ## Verification completed here
 
-- Backend Python syntax check passed with `python3 -m compileall backend/app`
+- Backend import validation passed with `./.venv/bin/python -c "import app.main"`
+- Backend smoke tests passed for:
+  - `GET /health`
+  - `GET /api/public/site`
+  - `POST /api/admin/auth/login`
+  - `GET /api/admin/dashboard`
+  - `POST /api/public/contact`
+  - `PUT /api/admin/inquiries/{id}`
 - JSON seed validation passed
 
 ## Verification not completed here
