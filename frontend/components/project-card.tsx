@@ -11,7 +11,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <article className="project-card">
       <div
         className="project-card-image"
-        style={{ backgroundImage: `linear-gradient(180deg, rgba(8, 15, 28, 0.08), rgba(8, 15, 28, 0.72)), url(${project.image})` }}
+        style={{ backgroundImage: `url(${project.image})` }}
       />
       <div className="project-card-content">
         <div className="project-meta-row">
@@ -25,7 +25,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <strong>{project.year_completed}</strong>
         </div>
         <Link href={`/projects/${project.slug}`} className="text-link">
-          View project
+          View Project
         </Link>
       </div>
     </article>

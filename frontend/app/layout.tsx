@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 
 import { ConditionalShell } from "@/components/conditional-shell";
 import { getSiteData } from "@/lib/api";
 
 import "./globals.css";
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans"
 });
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["400", "500", "600", "700"]
 });
 
 export const metadata: Metadata = {
-  title: "Mandali Builders",
-  description: "Professional construction company platform for Mandali Builders."
+  title: "Mandali Builders | Professional Construction Company",
+  description:
+    "Mandali Builders — a leading construction company delivering commercial, residential, and infrastructure projects with precision and transparency."
 };
 
 export default async function RootLayout({
@@ -32,7 +33,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${cormorant.variable}`}>
+      <body className={`${inter.variable} ${playfair.variable}`}>
         <ConditionalShell profile={profile}>{children}</ConditionalShell>
       </body>
     </html>
