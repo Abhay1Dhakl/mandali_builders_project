@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 import { CompanyProfile } from "@/lib/types";
 
 import { Footer } from "./footer";
+import { PageMotion } from "./page-motion";
 
 interface SiteShellProps {
   children: ReactNode;
@@ -62,7 +63,9 @@ export function SiteShell({ children, profile }: SiteShellProps) {
         </div>
       </header>
 
-      <main>{children}</main>
+      <main>
+        <PageMotion>{children}</PageMotion>
+      </main>
       <Footer profile={profile} />
     </div>
   );
