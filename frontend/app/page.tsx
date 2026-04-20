@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ConstructionHeroScene } from "@/components/construction-hero-scene";
 import { InsightCard } from "@/components/insight-card";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
@@ -29,46 +30,60 @@ export default async function HomePage() {
 
         <div className="hero-content">
           <div className="container">
-            <span className="hero-tagline">Mandali Builders — Built for Impact</span>
-            <h1>
-              Making a <em>Difference</em>
-            </h1>
-            <p
-              style={{
-                color: "rgba(255,255,255,0.72)",
-                fontSize: "1.05rem",
-                maxWidth: "48ch",
-                marginTop: "1.2rem"
-              }}
-            >
-              {data.profile.hero_subtitle}
-            </p>
+            <div className="hero-layout">
+              <div className="hero-copy">
+                <span className="hero-tagline">Mandali Builders — Built for Impact</span>
+                <h1>
+                  Making a <em>Difference</em>
+                </h1>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.72)",
+                    fontSize: "1.05rem",
+                    maxWidth: "48ch",
+                    marginTop: "1.2rem"
+                  }}
+                >
+                  {data.profile.hero_subtitle}
+                </p>
 
-            <div className="hero-actions">
-              <Link href="/contact" className="button">
-                {data.profile.hero_primary_cta}
-              </Link>
-              <Link href="/projects" className="button-outline">
-                {data.profile.hero_secondary_cta}
-              </Link>
-            </div>
+                <div className="hero-proof-points">
+                  <span>Preconstruction Strategy</span>
+                  <span>Structural Precision</span>
+                  <span>Site Execution Control</span>
+                </div>
 
-            <div className="hero-stats">
-              <div className="stat-pill">
-                <span>Experience</span>
-                <strong>{data.profile.years_experience}+ Years</strong>
+                <div className="hero-actions">
+                  <Link href="/contact" className="button">
+                    {data.profile.hero_primary_cta}
+                  </Link>
+                  <Link href="/projects" className="button-outline">
+                    {data.profile.hero_secondary_cta}
+                  </Link>
+                </div>
+
+                <div className="hero-stats">
+                  <div className="stat-pill">
+                    <span>Experience</span>
+                    <strong>{data.profile.years_experience}+ Years</strong>
+                  </div>
+                  <div className="stat-pill">
+                    <span>Projects</span>
+                    <strong>{data.profile.completed_projects}</strong>
+                  </div>
+                  <div className="stat-pill">
+                    <span>Annual Volume</span>
+                    <strong>{data.profile.annual_volume}</strong>
+                  </div>
+                  <div className="stat-pill">
+                    <span>Client Retention</span>
+                    <strong>{data.profile.client_retention}</strong>
+                  </div>
+                </div>
               </div>
-              <div className="stat-pill">
-                <span>Projects</span>
-                <strong>{data.profile.completed_projects}</strong>
-              </div>
-              <div className="stat-pill">
-                <span>Annual Volume</span>
-                <strong>{data.profile.annual_volume}</strong>
-              </div>
-              <div className="stat-pill">
-                <span>Client Retention</span>
-                <strong>{data.profile.client_retention}</strong>
+
+              <div className="hero-visual-column">
+                <ConstructionHeroScene />
               </div>
             </div>
           </div>

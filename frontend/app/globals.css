@@ -331,6 +331,17 @@ p {
   padding: 7rem 0 5.5rem;
 }
 
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(2.5rem, 4vw, 5rem);
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 42rem;
+}
+
 .hero-content h1 {
   color: white;
   font-weight: 300;
@@ -352,6 +363,28 @@ p {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: 1.6rem;
+}
+
+.hero-proof-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+.hero-proof-points span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .hero-actions {
@@ -389,6 +422,690 @@ p {
   font-weight: 600;
   color: white;
   font-family: var(--font-display);
+}
+
+.hero-visual-column {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.construction-scene-frame {
+  width: min(100%, 560px);
+}
+
+.construction-scene-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.construction-scene-intro strong {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.construction-scene {
+  --scene-rotate-x: 2.4deg;
+  --scene-rotate-y: 1.7deg;
+  --scene-glow-x: 62%;
+  --scene-glow-y: 30%;
+  position: relative;
+  min-height: 530px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(15, 32, 60, 0.9) 0%, rgba(6, 14, 28, 0.98) 100%),
+    radial-gradient(circle at top, rgba(60, 122, 235, 0.2), transparent 45%);
+  box-shadow:
+    0 28px 80px rgba(1, 9, 20, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  isolation: isolate;
+  perspective: 2200px;
+}
+
+.construction-scene::before,
+.construction-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.construction-scene::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.02) 24%,
+    transparent 48%,
+    rgba(97, 155, 255, 0.14) 100%
+  );
+  z-index: 1;
+}
+
+.construction-scene::after {
+  background: radial-gradient(
+    circle at var(--scene-glow-x) var(--scene-glow-y),
+    rgba(97, 155, 255, 0.22) 0%,
+    transparent 34%
+  );
+  transition: background 0.18s linear;
+  z-index: 1;
+}
+
+.construction-scene-glow,
+.construction-scene-orbit {
+  position: absolute;
+  pointer-events: none;
+}
+
+.construction-scene-glow {
+  border-radius: 50%;
+  filter: blur(22px);
+  opacity: 0.8;
+}
+
+.construction-scene-glow--primary {
+  top: -2rem;
+  right: -3rem;
+  width: 14rem;
+  height: 14rem;
+  background: rgba(33, 123, 255, 0.34);
+}
+
+.construction-scene-glow--secondary {
+  bottom: 2rem;
+  left: -1.5rem;
+  width: 10rem;
+  height: 10rem;
+  background: rgba(245, 167, 66, 0.28);
+}
+
+.construction-scene-orbit {
+  border: 1px solid rgba(150, 196, 255, 0.14);
+  border-radius: 999px;
+  animation: orbit-spin 18s linear infinite;
+}
+
+.construction-scene-orbit--one {
+  width: 28rem;
+  height: 28rem;
+  top: -8rem;
+  right: -8rem;
+}
+
+.construction-scene-orbit--two {
+  width: 20rem;
+  height: 20rem;
+  bottom: -8rem;
+  left: -6rem;
+  animation-duration: 14s;
+  animation-direction: reverse;
+}
+
+.construction-scene-card {
+  position: absolute;
+  z-index: 3;
+  backdrop-filter: blur(18px);
+  background: rgba(10, 20, 37, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.construction-scene-card--status {
+  top: 1.4rem;
+  right: 1.4rem;
+  padding: 1rem 1.2rem;
+  border-radius: 18px;
+  max-width: 16rem;
+}
+
+.construction-scene-card--status span {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.construction-scene-card--status strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.construction-scene-card--metrics {
+  left: 1.4rem;
+  bottom: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  width: min(23rem, calc(100% - 2.8rem));
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+}
+
+.construction-metric {
+  display: grid;
+  gap: 0.22rem;
+}
+
+.construction-metric strong {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: white;
+}
+
+.construction-metric span {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.construction-scene-stage {
+  position: absolute;
+  inset: 4.5rem 1.8rem 2rem;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--scene-rotate-x)) rotateY(var(--scene-rotate-y));
+  transition: transform 0.35s ease-out;
+  animation: scene-drift 8s ease-in-out infinite;
+  z-index: 2;
+}
+
+.construction-stage-floor,
+.construction-stage-grid,
+.construction-stage-runway {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform-origin: center bottom;
+}
+
+.construction-stage-floor {
+  bottom: 0;
+  height: 13rem;
+  border-radius: 2rem;
+  background: linear-gradient(180deg, rgba(19, 47, 92, 0.95) 0%, rgba(6, 15, 30, 0.95) 100%);
+  border: 1px solid rgba(122, 179, 255, 0.12);
+  box-shadow:
+    0 0 60px rgba(41, 110, 224, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transform: rotateX(74deg) translateZ(0);
+}
+
+.construction-stage-grid {
+  bottom: 1.4rem;
+  left: 6%;
+  right: 6%;
+  height: 11rem;
+  border-radius: 1.6rem;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(152, 191, 255, 0.1) 0,
+      rgba(152, 191, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 2.6rem
+    ),
+    repeating-linear-gradient(
+      180deg,
+      rgba(152, 191, 255, 0.1) 0,
+      rgba(152, 191, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 2.6rem
+    );
+  transform: rotateX(74deg) translateZ(1px);
+  opacity: 0.68;
+}
+
+.construction-stage-runway {
+  bottom: 2rem;
+  left: 36%;
+  right: 22%;
+  height: 1.1rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 191, 92, 0) 0%, rgba(255, 191, 92, 0.72) 28%, rgba(97, 155, 255, 0.75) 100%);
+  transform: rotateX(74deg) translateZ(3px);
+  opacity: 0.88;
+}
+
+.construction-platform,
+.construction-tower,
+.construction-core,
+.construction-load,
+.construction-crane,
+.construction-beam,
+.construction-column,
+.construction-signal {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.construction-platform {
+  bottom: 6.3rem;
+  height: 1.6rem;
+  border-radius: 0.65rem;
+  background: linear-gradient(180deg, #8199bb 0%, #506784 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+  transform: translateZ(1.7rem);
+}
+
+.construction-platform::before,
+.construction-platform::after,
+.construction-column::before,
+.construction-column::after {
+  content: "";
+  position: absolute;
+}
+
+.construction-platform::before,
+.construction-column::before {
+  left: 0;
+  right: 0;
+  top: -0.8rem;
+  height: 0.8rem;
+  background: linear-gradient(90deg, #cfd8e6 0%, #9aaed0 100%);
+  transform-origin: bottom;
+  transform: rotateX(90deg);
+}
+
+.construction-platform::after,
+.construction-column::after {
+  top: 0;
+  right: -0.8rem;
+  width: 0.8rem;
+  height: 100%;
+  background: linear-gradient(180deg, #637892 0%, #394a62 100%);
+  transform-origin: left;
+  transform: rotateY(90deg);
+}
+
+.construction-platform--main {
+  left: 24%;
+  width: 38%;
+}
+
+.construction-platform--east {
+  left: 64%;
+  width: 18%;
+  bottom: 7.1rem;
+  transform: translateZ(1.15rem);
+}
+
+.construction-tower {
+  bottom: 8rem;
+  background: linear-gradient(180deg, #eaf0fb 0%, #90a7c6 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 22px 38px rgba(0, 0, 0, 0.22);
+  animation: tower-breathe 7.4s ease-in-out infinite;
+}
+
+.construction-tower::before,
+.construction-tower::after {
+  content: "";
+  position: absolute;
+}
+
+.construction-tower::before {
+  top: 0;
+  right: -1.25rem;
+  width: 1.25rem;
+  height: 100%;
+  background: linear-gradient(180deg, #6b84a6 0%, #44586f 100%);
+  transform-origin: left;
+  transform: rotateY(90deg);
+}
+
+.construction-tower::after {
+  left: 0;
+  top: -1.25rem;
+  width: 100%;
+  height: 1.25rem;
+  background: linear-gradient(90deg, #f8fbff 0%, #c8d3e5 100%);
+  transform-origin: bottom;
+  transform: rotateX(90deg);
+}
+
+.construction-tower--west {
+  left: 30%;
+  width: 4.9rem;
+  height: 10.5rem;
+  transform: translateZ(3.5rem);
+  animation-delay: -1.5s;
+}
+
+.construction-tower--center {
+  left: 46%;
+  width: 6.5rem;
+  height: 14.2rem;
+  transform: translateZ(5.3rem);
+}
+
+.construction-tower--east {
+  left: 65%;
+  width: 3.8rem;
+  height: 7.8rem;
+  transform: translateZ(2.8rem);
+  animation-delay: -3.2s;
+}
+
+.construction-window-band {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  height: 0.48rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(110, 243, 255, 0.82) 0%, rgba(198, 232, 255, 1) 40%, rgba(110, 243, 255, 0.82) 100%);
+  box-shadow: 0 0 18px rgba(104, 210, 255, 0.28);
+}
+
+.construction-window-band--a { top: 18%; }
+.construction-window-band--b { top: 36%; }
+.construction-window-band--c { top: 54%; }
+.construction-window-band--d { top: 72%; }
+
+.construction-core {
+  left: 58%;
+  bottom: 8rem;
+  width: 2.9rem;
+  height: 12.1rem;
+  border-radius: 0.55rem 0.55rem 0 0;
+  background: linear-gradient(180deg, #ffda7f 0%, #d07d11 100%);
+  border: 1px solid rgba(255, 243, 194, 0.22);
+  transform: translateZ(4rem);
+  animation: core-rise 6.8s ease-in-out infinite;
+}
+
+.construction-core::before {
+  content: "";
+  position: absolute;
+  inset: 0.8rem 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(122, 60, 0, 0.9) 0,
+    rgba(122, 60, 0, 0.9) 0.45rem,
+    rgba(255, 219, 143, 0.15) 0.45rem,
+    rgba(255, 219, 143, 0.15) 0.9rem
+  );
+}
+
+.construction-crane {
+  left: 12%;
+  bottom: 8rem;
+  width: 16rem;
+  height: 19rem;
+  transform: translateZ(6rem);
+}
+
+.construction-crane-mast,
+.construction-crane-arm,
+.construction-crane-counterweight,
+.construction-crane-cable,
+.construction-crane-hook {
+  position: absolute;
+  display: block;
+}
+
+.construction-crane-mast {
+  left: 1.8rem;
+  bottom: 0;
+  width: 1.1rem;
+  height: 14.5rem;
+  border-radius: 0.35rem;
+  background: repeating-linear-gradient(
+    180deg,
+    #ffca61 0,
+    #ffca61 0.78rem,
+    #d77d00 0.78rem,
+    #d77d00 1.56rem
+  );
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.construction-crane-arm {
+  top: 3.1rem;
+  left: 2.65rem;
+  width: 12rem;
+  height: 0.9rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffc75a 0%, #f1991b 52%, #b96b00 100%);
+  transform-origin: left center;
+  animation: crane-arm-sway 5.4s ease-in-out infinite;
+}
+
+.construction-crane-counterweight {
+  top: 2.65rem;
+  left: 0.3rem;
+  width: 2.25rem;
+  height: 1.4rem;
+  border-radius: 0.35rem;
+  background: linear-gradient(180deg, #526784 0%, #223147 100%);
+}
+
+.construction-crane-cable {
+  top: 4rem;
+  left: 12.8rem;
+  width: 2px;
+  height: 6.8rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(160, 195, 255, 0.2) 100%);
+  transform-origin: top center;
+  animation: crane-cable-sway 5.4s ease-in-out infinite;
+}
+
+.construction-crane-hook {
+  top: 10.4rem;
+  left: 12.22rem;
+  width: 1.2rem;
+  height: 1.35rem;
+  border: 0.24rem solid #ffb11c;
+  border-top: none;
+  border-radius: 0 0 0.8rem 0.8rem;
+  animation: crane-hook-lift 5.4s ease-in-out infinite;
+}
+
+.construction-load {
+  left: 59%;
+  bottom: 13.5rem;
+  width: 4.4rem;
+  height: 1.3rem;
+  border-radius: 0.42rem;
+  background: linear-gradient(180deg, #f5b24d 0%, #bc6d11 100%);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+  transform: translateZ(5rem);
+  animation: load-sway 5.4s ease-in-out infinite;
+}
+
+.construction-load::before,
+.construction-load::after {
+  content: "";
+  position: absolute;
+  top: -1.7rem;
+  width: 2px;
+  height: 1.7rem;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.construction-load::before { left: 28%; }
+.construction-load::after { right: 28%; }
+
+.construction-beam {
+  height: 0.72rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #82c8ff 0%, #c8e7ff 52%, #82c8ff 100%);
+  box-shadow: 0 0 20px rgba(95, 199, 255, 0.2);
+}
+
+.construction-beam--one {
+  left: 48%;
+  bottom: 15.8rem;
+  width: 6rem;
+  transform: translateZ(4.6rem);
+}
+
+.construction-beam--two {
+  left: 36%;
+  bottom: 11.3rem;
+  width: 4.5rem;
+  transform: translateZ(2.4rem);
+}
+
+.construction-column {
+  bottom: 8rem;
+  width: 0.9rem;
+  background: linear-gradient(180deg, #dbe3f0 0%, #738aa9 100%);
+  border-radius: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.construction-column--one {
+  left: 40%;
+  height: 5rem;
+  transform: translateZ(2.1rem);
+}
+
+.construction-column--two {
+  left: 44%;
+  height: 7rem;
+  transform: translateZ(2.6rem);
+}
+
+.construction-signal {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #6ef3ff;
+  box-shadow: 0 0 22px rgba(110, 243, 255, 0.8);
+  animation: signal-pulse 2.6s ease-in-out infinite;
+}
+
+.construction-signal--one {
+  left: 56%;
+  bottom: 22rem;
+  transform: translateZ(4.6rem);
+}
+
+.construction-signal--two {
+  left: 71%;
+  bottom: 16rem;
+  transform: translateZ(3rem);
+  animation-delay: -1.1s;
+}
+
+@keyframes scene-drift {
+  0%,
+  100% {
+    transform: rotateX(var(--scene-rotate-x)) rotateY(var(--scene-rotate-y)) translateY(0);
+  }
+
+  50% {
+    transform: rotateX(calc(var(--scene-rotate-x) + 0.7deg)) rotateY(calc(var(--scene-rotate-y) - 0.8deg)) translateY(-10px);
+  }
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes crane-arm-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes crane-cable-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes crane-hook-lift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes load-sway {
+  0%,
+  100% {
+    transform: translateZ(5rem) translateX(0);
+  }
+
+  50% {
+    transform: translateZ(5rem) translateX(-8px) translateY(-10px);
+  }
+}
+
+@keyframes tower-breathe {
+  0%,
+  100% {
+    transform: translateZ(var(--tower-depth, 4rem)) translateY(0);
+  }
+
+  50% {
+    transform: translateZ(var(--tower-depth, 4rem)) translateY(-6px);
+  }
+}
+
+.construction-tower--west { --tower-depth: 3.5rem; }
+.construction-tower--center { --tower-depth: 5.3rem; }
+.construction-tower--east { --tower-depth: 2.8rem; }
+
+@keyframes core-rise {
+  0%,
+  100% {
+    transform: translateZ(4rem) translateY(0);
+  }
+
+  50% {
+    transform: translateZ(4rem) translateY(-12px);
+  }
+}
+
+@keyframes signal-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    box-shadow: 0 0 14px rgba(110, 243, 255, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 26px rgba(110, 243, 255, 0.9);
+  }
 }
 
 /* ─── Arrow CTA Link ─────────────────────────────────── */
@@ -1600,8 +2317,38 @@ p {
   color: #c0392b;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ─── Responsive ─────────────────────────────────────── */
 @media (max-width: 1100px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero-visual-column {
+    justify-content: flex-start;
+  }
+
+  .construction-scene-frame {
+    width: min(100%, 620px);
+  }
+
   .feature-split {
     grid-template-columns: 1fr;
   }
@@ -1651,6 +2398,14 @@ p {
 }
 
 @media (max-width: 860px) {
+  .construction-scene {
+    min-height: 470px;
+  }
+
+  .construction-scene-stage {
+    inset: 5.4rem 1.2rem 1.7rem;
+  }
+
   .split-section {
     grid-template-columns: 1fr;
   }
@@ -1674,6 +2429,19 @@ p {
     padding: 5rem 0 4rem;
   }
 
+  .hero-layout {
+    gap: 2rem;
+  }
+
+  .hero-proof-points {
+    gap: 0.65rem;
+  }
+
+  .hero-proof-points span {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+
   h1 {
     font-size: clamp(2.4rem, 10vw, 3.5rem);
   }
@@ -1690,6 +2458,52 @@ p {
   .site-nav {
     flex-wrap: wrap;
     gap: 0.1rem;
+  }
+
+  .construction-scene {
+    min-height: 420px;
+  }
+
+  .construction-scene-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .construction-scene-card--status {
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+    max-width: none;
+  }
+
+  .construction-scene-card--metrics {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    width: auto;
+  }
+
+  .construction-scene-stage {
+    inset: 5.8rem 0.8rem 1.4rem;
+  }
+
+  .construction-crane {
+    left: 5%;
+    transform: translateZ(4.6rem) scale(0.9);
+    transform-origin: left bottom;
+  }
+
+  .construction-tower--west {
+    left: 28%;
+  }
+
+  .construction-tower--center {
+    left: 44%;
+  }
+
+  .construction-tower--east {
+    left: 63%;
   }
 
   .sector-grid,
@@ -1740,5 +2554,37 @@ p {
 
   .admin-form-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .construction-scene {
+    min-height: 370px;
+    border-radius: 24px;
+  }
+
+  .construction-scene-card--metrics {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .construction-metric strong {
+    font-size: 1.15rem;
+  }
+
+  .construction-scene-stage {
+    inset: 6.6rem 0.5rem 1rem;
+  }
+
+  .construction-crane {
+    left: -4%;
+    transform: translateZ(4.1rem) scale(0.7);
+  }
+
+  .construction-load,
+  .construction-beam--one,
+  .construction-beam--two,
+  .construction-signal--one {
+    display: none;
   }
 }
